@@ -3,21 +3,24 @@
 // Execute `rustlings hint strings3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 fn trim_me(input: &str) -> String {
     // TODO: Remove whitespace from both ends of a string!
-    ???
+    let string = String::from(input);
+    return String::from(string.trim());
 }
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There are multiple ways to do this!
-    ???
+
+    let mut string = String::from(input);
+    string.push_str(" world!");
+    return string;
 }
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons"!
-    ???
+    let string = String::from(input);
+    return string.replace("car", "balloon");
 }
 
 #[cfg(test)]
@@ -39,7 +42,13 @@ mod tests {
 
     #[test]
     fn replace_a_string() {
-        assert_eq!(replace_me("I think cars are cool"), "I think balloons are cool");
-        assert_eq!(replace_me("I love to look at cars"), "I love to look at balloons");
+        assert_eq!(
+            replace_me("I think cars are cool"),
+            "I think balloons are cool"
+        );
+        assert_eq!(
+            replace_me("I love to look at cars"),
+            "I love to look at balloons"
+        );
     }
 }
